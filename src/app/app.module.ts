@@ -9,7 +9,8 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BusinessService } from './business.service';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { BusinessService } from './business.service';
     SlimLoadingBarModule,
     ReactiveFormsModule,
     HttpClientModule,
+   ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [BusinessService],
   bootstrap: [AppComponent]
